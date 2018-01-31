@@ -1,0 +1,106 @@
+<!DICTYPE html>
+<html lang = "it">
+<head>
+	<meta charset = "utf-8">
+	<title>Percorso Blog - TPS IT</title>
+	<meta name = "descripton" content = "Blog percorso, tesina, maturita, 207, informatica, storia, italiano, siste e reti, gestione progetto, TPS">
+	<meta name = "keywords" content = "informatica, storia, italiano, siste e reti, gestione progetto, TPS">
+	<meta name = "author" content = "Dawid Jakub Grzelczyk">
+	<meta http-equiv = "x-ua-Compatible" content = "IE = edge, chrome = 1">
+	
+	<link rel = "stylesheet" href = "main.css">
+	<link rel = "stylesheet" href = "css/fontello.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<h1 class = "logo">
+			<span style = "color: E10505;">Cinema</span>tografia
+			<i class="icon-video"></i>
+		</h1>
+		
+		<nav>
+			<ul class = "menu">
+				<li><a href = "index.html">Home Page</a></li>
+				<li><a href = "ita.html">Italiano</a></li>
+				<li><a href = "storia.html">Storia</a></li>
+				<li><a href = "inglese.html">Inglese</a></li>
+				<li><a href = "sistemi.html">Sistemi e Reti</a></li>
+				<li><a href = "#">TPS IT</a></li>
+				<li><a href = "info.html">Informatica</a></li>
+				<li><a href = "gpoi.html">Gestione Progetto</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<article>
+			<section>
+				<div class = "container">
+                    <header class = "sub_title">Socket</header>
+                    
+					<div class= "content">
+                        <div class = "title_img" style="width: 441px;">
+                            <img src = "img/tps1.jpg" alt = "pdca">
+                        </div>
+                        
+				    <p>Un socket è oggetto software che permette l’invio e la ricezione di dati, tra host remoti (tramite una rete) o tra processi locali (Inter-Process Communication).<br>
+				    Più precisamente, il concetto di socket si basa sul modello Input/Output su file di Unix, quindi sulle operazioni di open, read, write e close; l’utilizzo, infatti, avviene secondo le stesse modalità, aggiungendo i parametri utili alla comunicazione, quali indirizzi, numeri di porta e protocolli.<br>
+				    Socket locali e remoti in comunicazione, formano una coppia (pair), composta da indirizzo e porta di client e server.<br>
+				    Solitamente i sistemi operativi forniscono delle API per permettere alle applicazioni di controllare e utilizzare i socket di rete</p>
+                        
+                    <p><span class = "bloted">Famiglie di socket</span><br>
+				    I tipi di protocolli utilizzati dal socket, ne definiscono la famiglia (o dominio). Possiamo distinguere, ad esempio, due importanti famiglie:<br>
+				    AF_INET: comunicazione tra host remoto, tramite Internet;<br>
+                    AF_UNIX: comunicazione tra processi locali, su macchine Unix. Questa famiglia è anche chiamata Unix Domain Socket.</p>
+                        
+				    <p><span class = "bloted">Tipi di socket</span><br>
+				    All’interno della famiglia possiamo distinguere il tipo di socket, a seconda della modalità di connessione.  <br><br>Abbiamo:<br>
+				    Stream socket: orientati alla connessione (connection-oriented), basati su protocolli affidabili come TCP o SCTP;<br>
+                    Datagramsocket: non orientati alla connessione (connectionless), basati sul protocollo veloce ma inaffidabile UDP;<br>
+                    Raw socket (raw IP): il livello di trasporto viene bypassato, e l’header è accessibile al livello applicativo.</p>
+                        
+				    <p><span class = "bloted">Stream Socket</span><br>
+				    Essendo basati su protocolli a livello di trasporto come TCP, garantiscono una comunicazione affidabile, full-duplex, orientata alla  connessione, e con un flusso di byte di lunghezza variabile. La comunicazione mediante questo socket, si compone di queste fasi.</p>
+                        
+				    <p><span class = "italic">#1 – Creazione dei socket</span><br>
+				    Client e server creano i loro rispettivi socket, e il server lo pone in ascolto su una porta.Dato che il server può creare più connessioni con client diversi (ma anche con lo stesso), ha bisogno di una coda per gestire le varie richieste.</p>
+                        
+				    <p><span class = "italic">#2 – Richiesta di connessione</span><br>
+				    Il client effettua una richiesta di connessione verso il server.Da notare che possiamo avere due numeri di porta diversi, perché una potrebbe essere dedicata solo al traffico in uscita, l’altra solo in entrata; questo dipende dalla configurazione dell’host.In sostanza, non è detto che la porta locale del client coincida con quella remota del server. Il server riceve la richiesta e, nel caso in cui sia accettata, viene creata una nuova connessione.</p>
+                        
+				    <p><span class = "italic">#3 – Comunicazione</span><br>
+				    Ora client e server comunicano attraverso un canale virtuale, tra il socket del primo, ed uno nuovo del server, creato appositamente per il flusso dei dati di questa connessione: data socket.In fede di quanto accennato nella prima fase, il server crea il data socket perchè il primo serve esclusivamente alla gestione delle richieste.È possibile, quindi, che ci siano molti client a comunicare con il server, ciascuno verso il data socket creato dal server per loro.</p>
+            
+				    <p><span class = "italic">#4 – Chiusura della connessione</span><br>
+				    Essendo il TCP un protocollo orientato alla connessione, quando non si ha più la necessità di comunicare, il client lo comunica al server, che ne distanzia il data socket.La connessione viene così chiusa.</p>
+                        
+				    <p><span class="bloted">Datagram Socket</span><br>
+				    Sono basati su UDP, un protocollo a livello di trasporto che garantisce comunicazioni a bassa latenza (ideali per videochat, ad esempio), a discapito dell’affidabilità dei dati. Non esiste, infatti, controllo di flusso (ordinamento dei datagrammi e controllo degli errori).<br>
+				    Dato che l’UDP non è un protocollo orientato alla connessione, non esiste la fase di connessione vista poco fa, ma il client comunica direttamente con il server, quando vuole.</p>
+                        
+				    <p><span class = "italic">#1 – Creazione dei socket</span><br>
+				    Come nel tipo precedente, client e server creano i loro rispettivi socket, e il server lo pone in ascolto su una porta.<br>
+				    Il socket del server, stavolta, non ha bisogno di una coda, in quanto i dati in entrata e in uscita non devono essere circoscritti all’interno di una connessione, quindi la comunicazione con diversi client si svolge sulla stessa interfaccia.</p>
+                        
+				    <p><span class = "italic">#2 – Invio dei dati</span><br>
+				    Il client invia direttamente i datagrammi al server. Anche in questo caso vale quanto detto in precedenza riguardo i numeri di porta.</p>
+                        
+				    <p><span class = "italic">#3 – Risposta del server</span><br>
+				    Il server manda al client un eventuale risposta e una notifica di avvenuta ricezione dei dati, e lo invita ad inviarne i successivi<br>
+				    La comunicazione è, dunque, costituita da un loop che dura finchè ci sono dati da inviare e, ovviamente, finchè gli host sono raggiungibili.</p>
+					</div>
+				</div>
+			</section>
+		</article>
+	</main>
+	
+	<footer>
+		<div class="info">
+			Tutti i diritti riservati &copy; Realizzato da <a href = "https://about.me/dgrzelczyk" target="_blank" class = "am">Dawid Grzelczyk</a>
+		</div>
+	</footer>
+</body>
+</html>

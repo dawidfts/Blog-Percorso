@@ -1,0 +1,103 @@
+<!DICTYPE html>
+<html lang = "it">
+<head>
+	<meta charset = "utf-8">
+	<title>Percorso Blog - Sistemi</title>
+	<meta name = "descripton" content = "Blog percorso, tesina, maturita, 207, informatica, storia, italiano, siste e reti, gestione progetto, TPS">
+	<meta name = "keywords" content = "informatica, storia, italiano, siste e reti, gestione progetto, TPS">
+	<meta name = "author" content = "Dawid Jakub Grzelczyk">
+	<meta http-equiv = "x-ua-Compatible" content = "IE = edge, chrome = 1">
+	
+	<link rel = "stylesheet" href = "main.css">
+	<link rel = "stylesheet" href = "css/fontello.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+</head>
+
+<body>
+	<header>
+		<h1 class = "logo">
+			<span style = "color: E10505;">Cinema</span>tografia
+			<i class="icon-video"></i>
+		</h1>
+		
+		<nav>
+			<ul class = "menu">
+				<li><a href = "index.html">Home Page</a></li>
+				<li><a href = "ita.html">Italiano</a></li>
+				<li><a href = "storia.html">Storia</a></li>
+				<li><a href = "inglese.html">Inglese</a></li>
+				<li><a href = "#">Sistemi e Reti</a></li>
+				<li><a href = "tps.html">TPS IT</a></li>
+				<li><a href = "info.html">Informatica</a></li>
+				<li><a href = "gpoi.html">Gestione Progetto</a></li>
+			</ul>
+		</nav>
+	</header>
+	
+	<main>
+		<article>
+			<section>
+				<div class = "container">
+				    <header class = "sub_title">UDP</header>
+                    
+					<div class= "content">
+                        <div class = "title_img" style="width: 500px;">
+                            <img src = "img/sistemi1.jpg" alt = "udp">
+                        </div>
+                            <p><span class = "bloted" style = "font-size: 20px;">UDP</span> (User Datagram Protocol) è un protocollo di trasporto utilizzato
+                            nella rete TCP/IP, di tipo non connesso cioè nella rete. UDP gestisce solo l’indirizzamento, la multiplazione e il controllo dell’errore sul singolo pacchetto,
+                            mentre lascia al livello superiore (Applicazione) tutti gli altri compiti. Si tratta di un protocollo abbastanza semplice rispetto agli altri disponibili nella rete. UDP è un protocollo di tipo peer-to-peer (P2P), ovvero ognuno dei due
+                            lati della comunicazione ha le medesime capacità: se due host usano lo stesso
+                            indirizzo UDP, possono inviare e ricevere pacchetti, sempre che ognuno
+                            conosca a priori l’indirizzo IP dell’altro capo. UDP quindi consente una
+                            comunicazione full-duplex. Il suo svantaggio è quello che un pacchetto, anzi un datagram, una volta spedito non si ha la piena certezza che il pacchetto è arrivato, questo compito viene delegato al livello superiore (Applicazione). Questo difetto in alcuni casi può essere un vantaggio, rispetto al TCP, un singolo pacchetto è occupa meno memoria quindi il flusso dei dati è più veloce, non aspetta neanche una risposta di conferma quindi diventa ancora più rapido.</p>
+
+                            <p>Lo schema di indirizzamento di UDP si basa sul concetto di porta. La porta è un identificativo numerico espresso su 16 bit
+                            capace di numerare 2^16 = 65536 flussi differenti. Le porte UDP sono classificate in tre categorie:<br>
+                                
+                            <span class = "bloted" style = "font-size: 20px;">intervallo 0-1023</span>, well-known ports (porte ben note), dedicate a processi
+                            che usano protocolli applicativi comunemente usati sulla rete
+                            TCP/IP, spesso utilizzati da processi di sistema (servizi o demoni); sono
+                            assegnate da IANA, per esempio la porta 80 per il protocollo HTTP e 443 per HTTPS;<br>
+
+                            <span class = "bloted" style = "font-size: 20px;">intervallo 1024-49151</span>, registered ports (porte registrate), assegnate da
+                            IANA su richiesta di utenti o aziende che hanno intenzione di implementare
+                            servizi di rete pubblici, per esempio la porta 3306 per il servizio SQL;<br>
+
+                            <span class = "bloted" style = "font-size: 20px;">intervallo 49152–65535</span>, dynamic ports(porte dinamiche o locali), non
+                            assegnate e utilizzabili localmente come porte temporanee o porte per
+                            servizi locali alla rete di appartenenza.</p>
+
+                            <p>Il significato dei campi dell’header del pacchetto UDP è il seguente:</p>
+                            
+                            <div class = "title_img" style="width: 505px;">
+                                <img src = "img/sistemi2.png" alt = "udp">
+                            </div>
+                        
+                            <p><span class = "bloted" style = "font-size: 20px;">Source Port (16)</span>: è il numero di porta sulla quale si intendono ricevere
+                            pacchetti (datagrammi).<br>
+                            <span class = "bloted" style = "font-size: 20px;">Destination Port (16)</span>: è il numero di porta verso la quale si spediscono
+                            i pacchetti (datagrammi).<br>
+                            <span class = "bloted" style = "font-size: 20px;">Length (16)</span>: è la lunghezza totale (espressa in byte) del datagramma,
+                            compreso l’header UDP.<br>
+                            <span class = "bloted" style = "font-size: 20px;">Checksum (16)</span>: checksum calcolata come complemento a due della
+                            somma dei complementi a due di tutti i gruppi da 16 bit costituenti i
+                            campi.</p>
+
+                            <p>Per far comunicare due host attraverso il protocollo UDP abbiamo bisogno di tre variabili, ovvero, IP del destinatario, porta del mittente e la porta del destinatario. 
+                            Il protocollo è abbastanza semplice, si tratta di una richiesta di collegamento, conferma, soddisfazione della richiesta e la chiusura della connessione per liberare la porta.</p>
+
+					</div>
+				</div>
+			</section>
+		</article>
+	</main>
+	
+	<footer>
+		<div class="info">
+			Tutti i diritti riservati &copy; Realizzato da <a href = "https://about.me/dgrzelczyk" target="_blank" class = "am">Dawid Grzelczyk</a>
+		</div>
+	</footer>
+</body>
+</html>
